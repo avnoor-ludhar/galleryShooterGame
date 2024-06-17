@@ -27,11 +27,14 @@ timesnewromanfont5 = font.SysFont("Times New Roman", 68)
 arialfont1 = font.SysFont("Arial", 50)
 arialfont2 = font.SysFont("Arial", 30)
 
+BASEURL = "/Users/avnoorludhar/Desktop/computer sceince/high school projects/galleryShooterGame/"
+
 #Loads the different sound effects
-shotsound = mixer.Sound("Realistic Gunshot Sound Effect.wav")
-gameoversound = mixer.Sound("Evil game over sound effect for video games.wav")
-deathsound = mixer.Sound("pubgdeath1.wav")
-noammosound = mixer.Sound("Gun click - Sound effect.wav")
+shotsound = mixer.Sound(BASEURL + "RealisticGunshotSoundEffect.wav")
+gameoversound = mixer.Sound(BASEURL + "Evil game over sound effect for video games.wav")
+deathsound = mixer.Sound(BASEURL + "pubgdeath1.wav")
+noammosound = mixer.Sound(BASEURL + "Gun click - Sound effect.wav")
+
 
 #Channels for the sounds so they overlap
 shotsoundChannel = mixer.Channel(1)
@@ -47,21 +50,21 @@ FRAME = 3
 DELAY = 4
 TIMER = 5
 #Alivepics is the pictures for the soldier TYPE being alive.
-alivepics = [image.load("commadosprite/commadosprite0.png"), image.load("commadosprite/commadosprite1.png"),image.load("commadosprite/commadosprite2.png")]
+alivepics = [image.load(BASEURL + "commadosprite/commadosprite0.png"), image.load(BASEURL + "commadosprite/commadosprite1.png"),image.load(BASEURL + "commadosprite/commadosprite2.png")]
 #Nothing is a list so that nothing is displayed when badguys aren't on the screen.
 nothing = [0,0,0,0,0,0]
 #badguys is a list of lists that holds the data for each badguy enitity.
 #It has a rect position on the screen, a type, a status, a frame, a delay and a timer.
 badguys = [[Rect(250,400,55,55), "soldier", "off", 0, 0, 0], [Rect(670,260,55,55),"soldier","off", 0, 0, 0],[Rect(370,250,55,55),"soldier", "off", 0, 0, 0], [Rect(0,485,50,50), "enemydoctor", "off", 0, 0, 0], [Rect(625,255,45,45), "civilian", "off", 0, 0, 0]]
-shootpics = [image.load("commandoshoot1/commandoshoot0.png"), image.load("commandoshoot1/commandoshoot10.png"), image.load("commandoshoot1/commandoshoot10.png")]
+shootpics = [image.load(BASEURL + "commandoshoot1/commandoshoot0.png"), image.load(BASEURL + "commandoshoot1/commandoshoot10.png"), image.load(BASEURL + "commandoshoot1/commandoshoot10.png")]
 lives = 3
 
 #2 lists of the 2 types of pictures for the doctor TYPE.
-doctorpics = [image.load("doctormoveleft/doctormoveleft0.png"),image.load("doctormoveleft/doctormoveleft1.png"),image.load("doctormoveleft/doctormoveleft2.png"),image.load("doctormoveleft/doctormoveleft3.png")]
-doctordead = [image.load("doctordead1/doctordead10.png"),image.load("doctordead1/doctordead11.png"),image.load("doctordead1/doctordead12.png"),image.load("doctordead1/doctordead13.png"),image.load("doctordead1/doctordead14.png")]
+doctorpics = [image.load(BASEURL + "doctormoveleft/doctormoveleft0.png"),image.load(BASEURL + "doctormoveleft/doctormoveleft1.png"),image.load(BASEURL + "doctormoveleft/doctormoveleft2.png"),image.load(BASEURL + "doctormoveleft/doctormoveleft3.png")]
+doctordead = [image.load(BASEURL + "doctordead1/doctordead10.png"),image.load(BASEURL + "doctordead1/doctordead11.png"),image.load(BASEURL + "doctordead1/doctordead12.png"),image.load(BASEURL + "doctordead1/doctordead13.png"),image.load(BASEURL + "doctordead1/doctordead14.png")]
 
 #Pictures for the civilian TYPE.
-civilianpics = [image.load("civilianman/civilianman0.png"),image.load("civilianman/civilianman1.png"),image.load("civilianman/civilianman2.png")]
+civilianpics = [image.load(BASEURL + "civilianman/civilianman0.png"),image.load(BASEURL + "civilianman/civilianman1.png"),image.load(BASEURL + "civilianman/civilianman2.png")]
 
 #position of the crosshair.
 crosshairX = 400
@@ -72,18 +75,18 @@ doctorsx = 1000
 
 #Variable at 0,0 to blit background pictures at.
 loc = 0,0
-background = image.load("armybase.png")
+background = image.load(BASEURL + "armybase.png")
 
 #Pictures of the death animation for soldier TYPE.
 deadguys = []
-deadguys.append(image.load("commandodead1/commando dead10.png"))
-deadguys.append(image.load("commandodead1/commando dead11.png"))
-deadguys.append(image.load("commandodead1/commando dead12.png"))
-deadguys.append(image.load("commandodead1/commando dead13.png"))
-deadguys.append(image.load("commandodead1/commando dead15.png"))
+deadguys.append(image.load(BASEURL + "commandodead1/commando dead10.png"))
+deadguys.append(image.load(BASEURL + "commandodead1/commando dead11.png"))
+deadguys.append(image.load(BASEURL + "commandodead1/commando dead12.png"))
+deadguys.append(image.load(BASEURL + "commandodead1/commando dead13.png"))
+deadguys.append(image.load(BASEURL + "commandodead1/commando dead15.png"))
 
 #Pictures of ammocrate
-ammopics = [image.load("ammocratepics1/ammocratepics13.png"), image.load("ammocratepics1/ammocratepics12.png"),image.load("ammocratepics1/ammocratepics11.png"),image.load("ammocratepics1/ammocratepics10.png")]
+ammopics = [image.load(BASEURL + "ammocratepics1/ammocratepics13.png"), image.load(BASEURL + "ammocratepics1/ammocratepics12.png"),image.load(BASEURL + "ammocratepics1/ammocratepics11.png"),image.load(BASEURL + "ammocratepics1/ammocratepics10.png")]
     
 #A dictionary with each corresponding string to its list of pictures. 
 allPics = {"alive":alivepics, "dead":deadguys, "off":nothing, "shoot":shootpics, "enemydoctor":doctorpics, "doctordead":doctordead, "civilian":civilianpics, "opened":ammopics}
@@ -132,26 +135,26 @@ def music():
     if musicscreen == "Menu":
         mixer.music.stop()
         mixer.music.unload()
-        mixer.music.load("Jeopardy Theme.mp3")
+        mixer.music.load(BASEURL + "Jeopardy Theme.mp3")
         
     if musicscreen == "Game" and gamesongchoice == 0:
         mixer.music.stop()
         mixer.music.unload()
-        mixer.music.load("Runnin' (CLEAN) A AP Rocky, A AP Ferg & Nicki Minaj (Prod. By Mike WILL Made-it).wav")
+        mixer.music.load(BASEURL + "Runnin.wav")
 
     if musicscreen == "Game" and gamesongchoice == 1:
         mixer.music.stop()
         mixer.music.unload()
-        mixer.music.load("Jay-Z - Empire State Of Mind (Clean Edit).mp3")
+        mixer.music.load(BASEURL + "Jay-Z - Empire State Of Mind (Clean Edit).mp3")
                          
     if musicscreen == "Pause":
         mixer.music.stop()
         mixer.music.unload()
-        mixer.music.load("Jeopardy Theme.mp3")
+        mixer.music.load(BASEURL + "Jeopardy Theme.mp3")
     if musicscreen == "Highscore":
         mixer.music.stop()
         mixer.music.unload()
-        mixer.music.load("All I Do Is Win (clean).mp3")
+        mixer.music.load(BASEURL + "All I Do Is Win (clean).mp3")
         
 
     mixer.music.set_volume(0.45)  
@@ -550,7 +553,7 @@ def instructions():
     running = True
 
     #The picture for the instructions page.
-    picture = image.load("instructionpage.png")
+    picture = image.load(BASEURL + "instructionpage.png")
     backmenu = [Rect(620,520,235,40), "Back to the Menu."]
     
     def backmenudraw():
@@ -589,7 +592,7 @@ def credit():
     running = True
     
     #The picture for the credit page.
-    picture = image.load("credits.png")
+    picture = image.load(BASEURL + "credits.png")
     backmenu = [Rect(750,500,250,40), "Back to the Menu."]
 
     def backmenudraw():
@@ -626,11 +629,11 @@ def pause():
 
     loc = (0,0)
     #picture is the background
-    picture = image.load("menubackground.png")
+    picture = image.load(BASEURL + "menubackground.png")
     picture = transform.smoothscale(picture, (1000, 601))
 
     #meme is the meme displayed.
-    meme = image.load("pausememe.png")
+    meme = image.load(BASEURL + "pausememe.png")
 
     backmenu = [Rect(750,500,250,40), "Back to the Game"]
     
@@ -710,7 +713,7 @@ def menu():
         mb = mouse.get_pressed()
 
         #pic is the background picture.
-        pic = image.load("menubackground.png")
+        pic = image.load(BASEURL + "menubackground.png")
         pic = transform.smoothscale(pic, (1000, 601))
 
         
@@ -787,7 +790,7 @@ def textfileaddition():
     newname = getName()
     if newname != "":
     #Scorefile is the file with all the scores and names
-        scorefile = open("score.txt")
+        scorefile = open(BASEURL + "score.txt")
 
     #list of tuples with the score and name of the person.
         scores = []
@@ -801,7 +804,7 @@ def textfileaddition():
             scores.append((points, newname))
             scores.sort(reverse=True)
 
-            out = open("score.txt", "w")
+            out = open(BASEURL + "score.txt", "w")
             for s, n in scores[:10]:
                 out.write(n+"\n" + str(s) + "\n")
             out.close()
@@ -814,9 +817,9 @@ def highscore():
     backmenu = [Rect(750,500,250,40), "Back to the Game"]
 
     #scorefile is the .txt file with all the scores and namees
-    scorefile = open("score.txt")
+    scorefile = open(BASEURL + "score.txt")
     #pic is the background picture.
-    pic = image.load("menubackground.png")
+    pic = image.load(BASEURL + "menubackground.png")
     picture = transform.smoothscale(pic, (1000, 601))
 
     #hightitle is the title for the highscorers menu.
